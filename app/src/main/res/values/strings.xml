@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">CodeChallengeYape</string>
+    <string name="home_title">Inicio</string>
+    <string name="home_content">contenido</string>
+    <string name="home_search">Search</string>
+    <string name="home_recipe">Recipe Id : </string>
+    <string name="title_detail">Detalle</string>
+    <string name="detail_category">Categoria : </string>
+    <string name="detail_map">Ver lugar de origen</string>
+
+    <string name="splashScreen_label">Logotipo Splash Screen"</string>
+
+    <string name="mapScreen_title">Origen de la receta</string>
+    <string name="mapScreen_mark">Coordenadas:</string>
+    <string name="detailScreen_Description">About Recipe : </string>
+</resources>
