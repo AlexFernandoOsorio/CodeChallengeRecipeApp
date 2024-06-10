@@ -11,7 +11,7 @@ class GetRecipeUseCase @Inject constructor(
     private val recipeRepository: RecipeRepository
 ) {
     // Este caso de uso se encarga de obtener informacion de una receta por ID
-    suspend fun getRecipeFromAPI(param: String): Flow<FlowResult<List<RecipeModel>>> =
+    operator fun invoke(param: String): Flow<FlowResult<List<RecipeModel>>> =
         flow<FlowResult<List<RecipeModel>>> {
             emit(FlowResult.Loading())
             //llamamos al metodo getRecipeFromApi del repositorio

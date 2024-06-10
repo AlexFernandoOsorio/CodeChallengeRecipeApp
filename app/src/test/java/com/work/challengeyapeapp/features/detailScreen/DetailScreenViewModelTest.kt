@@ -50,7 +50,7 @@ class DetailScreenViewModelTest {
             )
         )
 
-        coEvery { getRecipeUseCase.getRecipeFromAPI("1234") } returns flow {
+        coEvery { getRecipeUseCase("1234") } returns flow {
             emit(FlowResult.Success(recipeList))
         }
 
@@ -58,6 +58,6 @@ class DetailScreenViewModelTest {
         viewModel.getRecipeDetail("1234")
 
         // Then
-        coVerify { getRecipeUseCase.getRecipeFromAPI("1234") }
+        coVerify { getRecipeUseCase("1234") }
     }
 }

@@ -10,7 +10,7 @@ class GetRecipeListUseCase @Inject constructor(
     private val recipeRepository: RecipeRepository
 ) {
     //En este caso de uso obtenemos una lista de recetas por letra
-    suspend fun getRecipeListFromAPI(param: String) = flow<FlowResult<List<RecipeModel>>> {
+    operator fun invoke(param: String) = flow<FlowResult<List<RecipeModel>>> {
         emit(FlowResult.Loading())
         //llamamos al metodo getRecipeListFromApi del repositorio
         val recipeList = runCatching { recipeRepository.getRecipeListFromApi(param) }

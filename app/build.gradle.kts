@@ -7,7 +7,10 @@ plugins {
     id("kotlin-parcelize")
     id("com.google.android.libraries.mapsplatform.secrets-gradle-plugin")
     id("io.gitlab.arturbosch.detekt")
+    id("jacoco")
 }
+
+apply(from = "$projectDir/jacoco.gradle")
 
 android {
     namespace = "com.work.challengeyapeapp"
@@ -40,6 +43,8 @@ android {
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+            enableAndroidTestCoverage = true
+            enableUnitTestCoverage = true
         }
     }
 
@@ -75,8 +80,9 @@ android {
         ignoreList.add("keyToIgnore")
         ignoreList.add("sdk.*")
     }
-
 }
+
+//apply(from = "$project.rootDir/jacoco.gradle")
 
 dependencies {
 
@@ -117,6 +123,7 @@ dependencies {
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
     testImplementation("io.mockk:mockk:1.12.2")
+    androidTestImplementation("io.mockk:mockk:1.12.2")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.0")
     testImplementation ("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.6.0")
     testImplementation("androidx.arch.core:core-testing:2.2.0")

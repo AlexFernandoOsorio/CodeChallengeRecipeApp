@@ -46,7 +46,7 @@ class HomeScreenViewModel @Inject constructor(
 
     // funcion para obtener la lista de recetas
     suspend fun getRecipesList(name: String) {
-        getRecipeListUseCase.getRecipeListFromAPI(name).onEach {
+        getRecipeListUseCase(name).onEach {
             when (it) {
                 is FlowResult.Loading -> {
                     //si esta cargando

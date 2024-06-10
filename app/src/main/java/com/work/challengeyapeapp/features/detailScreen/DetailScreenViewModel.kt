@@ -36,7 +36,7 @@ class DetailScreenViewModel @Inject constructor(
 
     // Funcion para obtener la receta
     suspend fun getRecipeDetail(id: String) {
-        getRecipeUseCase.getRecipeFromAPI(id).onEach {
+        getRecipeUseCase(id).onEach {
             when (it) {
                 is FlowResult.Loading -> {
                     //si esta cargando

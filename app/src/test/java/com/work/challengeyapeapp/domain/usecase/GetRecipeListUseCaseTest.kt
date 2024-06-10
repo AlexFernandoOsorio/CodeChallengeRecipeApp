@@ -56,7 +56,7 @@ class GetRecipeListUseCaseTest {
 
             // When
             val value = mutableListOf<FlowResult<List<RecipeModel>>>()
-            getRecipeListUseCase.getRecipeListFromAPI("pork").collect {
+            getRecipeListUseCase("pork").collect {
                 value.add(it)
             }
 

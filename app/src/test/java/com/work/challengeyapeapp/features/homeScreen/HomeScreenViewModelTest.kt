@@ -45,13 +45,13 @@ class HomeScreenViewModelTest {
                 "Test Ingredients"
             )
         )
-        coEvery { getRecipeListUseCase.getRecipeListFromAPI("meat") } returns flow {
+        coEvery { getRecipeListUseCase("meat") } returns flow {
             emit(FlowResult.Success(recipeList))
         }
 
         viewModel.getRecipesList("meat")
 
         // Then
-        coVerify { getRecipeListUseCase.getRecipeListFromAPI("meat") }
+        coVerify { getRecipeListUseCase("meat") }
     }
 }
