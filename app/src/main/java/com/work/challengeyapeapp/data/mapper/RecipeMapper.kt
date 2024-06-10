@@ -7,11 +7,11 @@ import com.work.challengeyapeapp.domain.model.RecipeModel
 fun RecipeListResponse.toModel(): List<RecipeModel> {
     return this.meals.map {
         RecipeModel(
-            id = it.idMeal as String ?: "",
-            name = it.strMeal as String ?: "",
-            description = it.strInstructions as String ?: "",
-            category = it.strCategory as String ?: "",
-            location = it.strArea as String ?: "",
+            id = it.idMeal as String,
+            name = it.strMeal as String,
+            description = it.strInstructions as String,
+            category = it.strCategory as String,
+            location = it.strArea as String,
             ingredients = listOf(
                 it.strIngredient1 ?: "",
                 it.strIngredient2 ?: "",

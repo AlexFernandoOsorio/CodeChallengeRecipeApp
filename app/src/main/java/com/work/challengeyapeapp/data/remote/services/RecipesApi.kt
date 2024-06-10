@@ -12,6 +12,6 @@ interface RecipesAPi {
 
     //Lista de recetas por nombre{nombre de la receta}
     @GET("search.php")
-    suspend fun getRecipesByName(@Query("s") recipeName: String): RecipeListResponse
+    suspend fun getRecipesListByLetter(@Query("s") recipeName: String): RecipeListResponse
 
 }

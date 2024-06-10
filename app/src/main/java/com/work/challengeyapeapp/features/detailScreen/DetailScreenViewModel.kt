@@ -6,15 +6,16 @@ import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.work.challengeyapeapp.core.FlowResult
-import com.work.challengeyapeapp.domain.usecase.GetRecipeFromApiUseCase
+import com.work.challengeyapeapp.domain.usecase.GetRecipeUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
+import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
 class DetailScreenViewModel @Inject constructor(
-    private val getRecipeFromApiUseCase: GetRecipeFromApiUseCase,
+    private val getRecipeUseCase: GetRecipeUseCase,
     savedStateHandle: SavedStateHandle
 ) : ViewModel() {
 
@@ -26,16 +27,16 @@ class DetailScreenViewModel @Inject constructor(
     init {
         savedStateHandle.getLiveData<String>("id").observeForever {
             it?.let {
-                getRecipeDetail(it)
+                viewModelScope.launch {
+                    getRecipeDetail(it)
+                }
             }
         }
     }
 
     // Funcion para obtener la receta
-    // llamamos al caso de uso getRecipeFromApiUseCase y nos retornara un FlowResult
-    // que puede ser de tipo Loading, Success o Error
-    private fun getRecipeDetail(id: String) {
-        getRecipeFromApiUseCase(id).onEach {
+    suspend fun getRecipeDetail(id: String) {
+        getRecipeUseCase.getRecipeFromAPI(id).onEach {
             when (it) {
                 is FlowResult.Loading -> {
                     //si esta cargando
@@ -44,7 +45,6 @@ class DetailScreenViewModel @Inject constructor(
 
                 is FlowResult.Success -> {
                     //si es exitoso, al estado le seteamos la data del resultado
-                    //En este caso el resultado es una lista con un solo elemeto
                     _recipeState.value = DetailScreenStateHolder(data = it.data)
                 }
 

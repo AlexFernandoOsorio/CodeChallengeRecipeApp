@@ -1,8 +1,8 @@
 package com.work.challengeyapeapp.di
 
 import com.work.challengeyapeapp.domain.repositories.RecipeRepository
-import com.work.challengeyapeapp.domain.usecase.GetRecipeFromApiUseCase
-import com.work.challengeyapeapp.domain.usecase.GetRecipeListFromApiUseCase
+import com.work.challengeyapeapp.domain.usecase.GetRecipeListUseCase
+import com.work.challengeyapeapp.domain.usecase.GetRecipeUseCase
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -13,12 +13,12 @@ import dagger.hilt.components.SingletonComponent
 object UseCaseModule {
 
     @Provides
-    fun provideGetRecipeListFromApiUseCase(repository: RecipeRepository): GetRecipeListFromApiUseCase {
-        return GetRecipeListFromApiUseCase(repository)
+    fun provideGetRecipeListFromApiUseCase(repository: RecipeRepository): GetRecipeListUseCase {
+        return GetRecipeListUseCase(repository)
     }
 
     @Provides
-    fun provideGetRecipeFromApiUseCase(repository: RecipeRepository): GetRecipeFromApiUseCase {
-        return GetRecipeFromApiUseCase(repository)
+    fun provideGetRecipeFromApiUseCase(repository: RecipeRepository): GetRecipeUseCase {
+        return GetRecipeUseCase(repository)
     }
 }

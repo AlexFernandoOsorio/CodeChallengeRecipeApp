@@ -88,11 +88,11 @@ fun SearchBox(
     TextField(
         value = searchText,
         onValueChange = { viewModel.setQuery(it) },
-        label = { Text(text = stringResource(R.string.home_search)) },
+        label = { Text(text = stringResource(R.string.homeScreen_search)) },
         leadingIcon = {
             Icon(
                 Icons.Outlined.Search,
-                contentDescription = stringResource(R.string.home_content)
+                contentDescription = stringResource(R.string.homeScreen_content)
             )
         },
         singleLine = true,
@@ -163,7 +163,7 @@ fun SearchResultsList(
                                 .data(recipeListData[index].image)
                                 .crossfade(true)
                                 .build(),
-                            contentDescription = stringResource(R.string.home_content),
+                            contentDescription = stringResource(R.string.homeScreen_content),
                             modifier = Modifier
                                 .height(dimensionResource(id = R.dimen.size_110))
                                 .width(dimensionResource(id = R.dimen.size_100)),
@@ -194,7 +194,7 @@ fun SearchResultsList(
                                     .fillMaxWidth()
                             ) {
                                 Text(
-                                    text = stringResource(R.string.home_recipe) + recipeListData[index].id,
+                                    text = stringResource(R.string.homeScreen_recipe_label) + recipeListData[index].id,
                                     color = Color.Black,
                                     fontSize = dimensionResource(R.dimen.size_14_sp).value.sp
                                 )
@@ -213,7 +213,7 @@ fun HomeScreenTopBar() {
     TopAppBar(
         title = {
             Text(
-                text = stringResource(id = R.string.home_title),
+                text = stringResource(id = R.string.homeScreen_title),
                 color = Color.White
             )
         },

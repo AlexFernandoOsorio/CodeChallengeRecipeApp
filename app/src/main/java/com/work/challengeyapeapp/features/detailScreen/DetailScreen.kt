@@ -78,7 +78,7 @@ fun DetailScreen(
                 item {
                     Image(
                         painter = rememberAsyncImagePainter(recipeList[0].image),
-                        contentDescription = stringResource(R.string.title_detail),
+                        contentDescription = stringResource(R.string.detailScreen_detail),
                         modifier = Modifier
                             .fillMaxSize()
                             .size(dimensionResource(R.dimen.size_250)),
@@ -100,7 +100,7 @@ fun DetailScreen(
 
                 item {
                     Text(
-                        text = stringResource(R.string.detail_category) + recipeList[0].category,
+                        text = stringResource(R.string.detailScreen_category_label) + recipeList[0].category,
                         style = MaterialTheme.typography.bodyLarge.copy(fontWeight = FontWeight.Bold),
                         textAlign = TextAlign.Center,
                         maxLines = GlobalConstants.MAX_LINES,
@@ -141,7 +141,7 @@ fun DetailScreen(
                         enabled = !resultState.isLoading
                     ) {
                         Text(
-                            text = stringResource(R.string.detail_map),
+                            text = stringResource(R.string.detailScreen_map_label),
                             color = Color.White,
                             style = MaterialTheme.typography.bodyLarge,
                             modifier = Modifier.padding(vertical = dimensionResource(R.dimen.size_6))
@@ -168,7 +168,7 @@ fun LoadingScreen() {
 @Composable
 fun DetailScreenTopBar(navController: NavController) {
     TopAppBar(
-        title = { Text(text = stringResource(R.string.title_detail), color = Color.White) },
+        title = { Text(text = stringResource(R.string.detailScreen_detail), color = Color.White) },
         colors = TopAppBarDefaults.topAppBarColors(containerColor = MaterialTheme.colorScheme.primary),
         navigationIcon = {
             IconButton(onClick = { navController.popBackStack() }) {

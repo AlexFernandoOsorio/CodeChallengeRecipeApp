@@ -16,7 +16,7 @@ class RecipeRepositoryImpl @Inject constructor(
 
     //suspend fun para recuperar una lista de recetas de la api
     override suspend fun getRecipeListFromApi(name: String): List<RecipeModel> {
-        return recipesApi.getRecipesByName(name).toModel()
+        return recipesApi.getRecipesListByLetter(name).toModel()
     }
 
     //suspend fun para recuperar una receta mediante id de la api

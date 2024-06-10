@@ -6,7 +6,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.work.challengeyapeapp.core.FlowResult
 import com.work.challengeyapeapp.core.GlobalConstants
-import com.work.challengeyapeapp.domain.usecase.GetRecipeListFromApiUseCase
+import com.work.challengeyapeapp.domain.usecase.GetRecipeListUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -19,7 +19,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 class HomeScreenViewModel @Inject constructor(
-    private val getRecipeListFromApiUseCase: GetRecipeListFromApiUseCase
+    private val getRecipeListUseCase: GetRecipeListUseCase
 ) : ViewModel() {
 
     //inicializamos el estado
@@ -45,10 +45,8 @@ class HomeScreenViewModel @Inject constructor(
     }
 
     // funcion para obtener la lista de recetas
-    // llamamos al caso de uso getRecipeListFromApiUseCase y nos retornara un
-    // FlowResult que puede ser de tipo Loading, Success o Error
-    private fun getRecipesList(name: String) {
-        getRecipeListFromApiUseCase(name).onEach {
+    suspend fun getRecipesList(name: String) {
+        getRecipeListUseCase.getRecipeListFromAPI(name).onEach {
             when (it) {
                 is FlowResult.Loading -> {
                     //si esta cargando

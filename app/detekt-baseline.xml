@@ -13,7 +13,7 @@
     <ID>FunctionNaming:HomeScreen.kt$@Composable fun SearchResultsList( viewModel: HomeScreenViewModel, listState: LazyListState, navController: NavController )</ID>
     <ID>FunctionNaming:HomeScreen.kt$@OptIn(ExperimentalMaterial3Api::class) @Composable fun HomeScreenTopBar()</ID>
     <ID>FunctionNaming:HomeScreen.kt$@OptIn(ExperimentalMaterial3Api::class) @Composable fun SearchBox( searchText: String, viewModel: HomeScreenViewModel )</ID>
-    <ID>FunctionNaming:HomeScreen.kt$@OptIn(ExperimentalMaterial3Api::class) @SuppressLint("UnusedMaterialScaffoldPaddingParameter") @Composable fun HomeScreen( viewModel: HomeScreenViewModel, navController: NavController )</ID>
+    <ID>FunctionNaming:HomeScreen.kt$@SuppressLint("UnusedMaterialScaffoldPaddingParameter") @Composable fun HomeScreen( viewModel: HomeScreenViewModel, navController: NavController )</ID>
     <ID>FunctionNaming:MapScreen.kt$@Composable fun MapMarker(marker: LatLng, mark: String, latitude: Double, altitude: Double)</ID>
     <ID>FunctionNaming:MapScreen.kt$@OptIn(ExperimentalMaterial3Api::class) @Composable fun MapScreenTopBar(navController: NavController)</ID>
     <ID>FunctionNaming:MapScreen.kt$@SuppressLint( "UnusedMaterialScaffoldPaddingParameter", "UnusedMaterial3ScaffoldPaddingParameter", "ResourceAsColor" ) @Composable fun MapScreen( mark: String, navController: NavController )</ID>
@@ -23,11 +23,12 @@
     <ID>FunctionNaming:Theme.kt$@Composable fun CodeChallengeYapeTheme( darkTheme: Boolean = isSystemInDarkTheme(), // Dynamic color is available on Android 12+ content: @Composable () -&gt; Unit )</ID>
     <ID>LongMethod:DetailScreen.kt$@SuppressLint("UnusedMaterialScaffoldPaddingParameter", "UnusedMaterial3ScaffoldPaddingParameter") @Composable fun DetailScreen( id: String, viewModel: DetailScreenViewModel, navController: NavController )</ID>
     <ID>LongMethod:HomeScreen.kt$@Composable fun SearchResultsList( viewModel: HomeScreenViewModel, listState: LazyListState, navController: NavController )</ID>
+    <ID>LongMethod:RecipeMapperKtTest.kt$RecipeMapperKtTest$@Test fun `when toRecipeEntity is called then verify it returns correct RecipeEntity`()</ID>
+    <ID>LongMethod:RecipeRepositoryImplTest.kt$RecipeRepositoryImplTest$@Test fun `when getRecipeListFromApi is called then verify it was called on RecipesApi`()</ID>
     <ID>MatchingDeclarationName:AppDataBase.kt$AppDatabase : RoomDatabase</ID>
     <ID>MatchingDeclarationName:GlobalConstans.kt$GlobalConstants</ID>
     <ID>MatchingDeclarationName:RecipesApi.kt$RecipesAPi</ID>
-    <ID>NewLineAtEndOfFile:ExampleUnitTest.kt$com.work.challengeyapeapp.ExampleUnitTest.kt</ID>
+    <ID>MaxLineLength:GetRecipeListUseCaseTest.kt$GetRecipeListUseCaseTest$fun</ID>
     <ID>UnusedParameter:NetworkModule.kt$NetworkModule$retrofit: Retrofit</ID>
-    <ID>WildcardImport:ExampleUnitTest.kt$import org.junit.Assert.*</ID>
   </CurrentIssues>
 </SmellBaseline>
