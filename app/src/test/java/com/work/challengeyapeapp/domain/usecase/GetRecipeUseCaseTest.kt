@@ -9,6 +9,7 @@ import io.mockk.MockKAnnotations
 import io.mockk.coEvery
 import io.mockk.coVerify
 import io.mockk.impl.annotations.RelaxedMockK
+import junit.framework.TestCase.assertEquals
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import org.junit.Before
 import org.junit.Rule
@@ -61,6 +62,5 @@ class GetRecipeUseCaseTest {
 
             // Then
             coVerify { recipeRepository.getRecipeFromApi(param) }
-
         }
 }

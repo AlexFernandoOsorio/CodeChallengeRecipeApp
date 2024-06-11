@@ -20,8 +20,8 @@ class DetailScreenViewModel @Inject constructor(
 ) : ViewModel() {
 
     // inicializamos el estado DetailState
-    private val _recipeState = mutableStateOf(DetailScreenStateHolder())
-    val recipeState: State<DetailScreenStateHolder> get() = _recipeState
+    private val _recipeState = mutableStateOf(DetailScreenState())
+    val recipeState: State<DetailScreenState> get() = _recipeState
 
     // llamamos a la funcion getRecipeDetail en la inicializacion del viewmodel/caso inicial
     init {
@@ -40,17 +40,17 @@ class DetailScreenViewModel @Inject constructor(
             when (it) {
                 is FlowResult.Loading -> {
                     //si esta cargando
-                    _recipeState.value = DetailScreenStateHolder(isLoading = true)
+                    _recipeState.value = DetailScreenState(isLoading = true)
                 }
 
                 is FlowResult.Success -> {
                     //si es exitoso, al estado le seteamos la data del resultado
-                    _recipeState.value = DetailScreenStateHolder(data = it.data)
+                    _recipeState.value = DetailScreenState(data = it.data)
                 }
 
                 is FlowResult.Error -> {
                     //Si hay un error, al estado le seteamos el error
-                    _recipeState.value = DetailScreenStateHolder(error = it.message.toString())
+                    _recipeState.value = DetailScreenState(error = it.message.toString())
                 }
             }
         }.launchIn(viewModelScope)

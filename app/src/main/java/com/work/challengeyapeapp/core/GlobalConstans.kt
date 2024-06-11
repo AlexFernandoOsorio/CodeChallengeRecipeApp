@@ -1,8 +1,13 @@
 package com.work.challengeyapeapp.core
 
+import com.work.challengeyapeapp.BuildConfig
+
+
 object GlobalConstants {
 
-    // Nwtwork messages
+    // Global Values
+    const val CONST_BASE_URL = BuildConfig.BASE_URL
+    // Network messages
     const val WITH_OUT_INTERNET = "No hay conexión a internet"
     const val WITH_OUT_SAVED_RECIPES = "No tienes Favoritos guardados"
     const val WITH_OUT_SEARCHS = "No se encontraron resultados"

@@ -23,8 +23,8 @@ class HomeScreenViewModel @Inject constructor(
 ) : ViewModel() {
 
     //inicializamos el estado
-    private val _recipeListState = mutableStateOf(HomeScreenStateHolder())
-    val recipeListState: State<HomeScreenStateHolder> get() = _recipeListState
+    private val _recipeListState = mutableStateOf(HomeScreenState())
+    val recipeListState: State<HomeScreenState> get() = _recipeListState
 
     //inicializamos el estado
     private val _recipeName: MutableStateFlow<String> = MutableStateFlow("")
@@ -50,17 +50,17 @@ class HomeScreenViewModel @Inject constructor(
             when (it) {
                 is FlowResult.Loading -> {
                     //si esta cargando
-                    _recipeListState.value = HomeScreenStateHolder(isLoading = true)
+                    _recipeListState.value = HomeScreenState(isLoading = true)
                 }
 
                 is FlowResult.Success -> {
                     //si es exitoso, al estado le seteamos la data del resultado
-                    _recipeListState.value = HomeScreenStateHolder(data = it.data)
+                    _recipeListState.value = HomeScreenState(data = it.data)
                 }
 
                 is FlowResult.Error -> {
                     //Si hay un error, al estado le seteamos el error
-                    _recipeListState.value = HomeScreenStateHolder(error = it.message.toString())
+                    _recipeListState.value = HomeScreenState(error = it.message.toString())
                 }
             }
         }.launchIn(viewModelScope)

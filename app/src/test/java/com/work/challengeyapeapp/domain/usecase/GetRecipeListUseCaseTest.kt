@@ -8,7 +8,7 @@ import com.work.challengeyapeapp.domain.repositories.RecipeRepository
 import io.mockk.MockKAnnotations
 import io.mockk.coEvery
 import io.mockk.coVerify
-import io.mockk.impl.annotations.MockK
+import io.mockk.impl.annotations.RelaxedMockK
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import org.junit.Before
 import org.junit.Rule
@@ -17,7 +17,7 @@ import org.junit.rules.TestRule
 
 class GetRecipeListUseCaseTest {
 
-    @MockK
+    @RelaxedMockK
     private lateinit var recipeRepository: RecipeRepository
 
     private lateinit var getRecipeListUseCase: GetRecipeListUseCase

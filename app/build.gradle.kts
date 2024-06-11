@@ -36,6 +36,9 @@ android {
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+            buildConfigField("String", "BASE_URL", "\"https://www.themealdb.com/api/json/v1/1/\"")
+            buildConfigField("String", "END_POINT_RECIPE_ID", "\"lookup.php\"")
+            buildConfigField("String", "END_POINT_RECIPE_NAME", "\"search.php\"")
         }
         debug {
             isMinifyEnabled = false
@@ -43,6 +46,9 @@ android {
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+            buildConfigField("String", "BASE_URL", "\"https://www.themealdb.com/api/json/v1/1/\"")
+            buildConfigField("String", "END_POINT_RECIPE_ID", "\"lookup.php\"")
+            buildConfigField("String", "END_POINT_RECIPE_NAME", "\"search.php\"")
             enableAndroidTestCoverage = true
             enableUnitTestCoverage = true
         }

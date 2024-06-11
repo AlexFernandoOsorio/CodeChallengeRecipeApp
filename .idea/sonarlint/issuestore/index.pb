@@ -29,8 +29,6 @@ Gapp/src/main/java/com/work/challengeyapeapp/domain/model/RecipeModel.kt,f/8/f8
 Sapp/src/main/java/com/work/challengeyapeapp/domain/repositories/RecipeRepository.kt,0/0/00226dbf53fbf56d8e6d550e858d30e7fce0d364
 Ü
 Vapp/src/main/java/com/work/challengeyapeapp/features/homeScreen/HomeScreenViewModel.kt,9/b/9b04cb56303bca4586246730370421794c868623
-à
-Xapp/src/main/java/com/work/challengeyapeapp/features/homeScreen/HomeScreenStateHolder.kt,1/3/130fb9c94909dde8484b60c9804aad38f21c0a1d
 }
 Mapp/src/main/java/com/work/challengeyapeapp/features/homeScreen/HomeScreen.kt,7/a/7a689cb90e4719f07c766700d2dcff1952f6c550
 r
@@ -51,8 +49,6 @@ t
 Dapp/src/main/java/com/work/challengeyapeapp/di/RepositoriesModule.kt,3/f/3f206bbdd1dc1a8d955eef1df1148c5341af8e5f
 ä
 Zapp/src/main/java/com/work/challengeyapeapp/features/detailScreen/DetailScreenViewModel.kt,7/5/7548bbfda78dd463b77401ff861734ca34cfc8a0
-å
-\app/src/main/java/com/work/challengeyapeapp/features/detailScreen/DetailScreenStateHolder.kt,8/d/8dc68ebae3597df70d60882353084c525bcd2e10
 Å
 Qapp/src/main/java/com/work/challengeyapeapp/features/detailScreen/DetailScreen.kt,8/4/8484a7635d18ee07023b4d7b49936ae2ad9544b5
 {
