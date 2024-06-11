@@ -1,7 +1,7 @@
 # Recetas APP
+App de recetas usando Kotlin que consume una API de Recetas gratuita [themealdb API](https://www.themealdb.com/api.php) que muestra un listado de recetas,se puede filtrar por un texto, visualizar el detalle de la receta previamente seleccionada y el lugar de origen visualizado en un mapa de Google SDK. App construida con principios de Clean Arquitecture, Repository Pattern, MVVM en la capa de presentacion asi como Jetpack Compose. Para el Testing se usa Junit y Mockk.
 
-
-App de recetas construida con Jetpack Compose y Clean Architecture. 
+![](https://github.com/AlexFernandoOsorio/CodeChallengeRecipeApp/blob/main/Screenshot%20from%202024-06.png) ![](https://github.com/AlexFernandoOsorio/CodeChallengeRecipeApp/blob/main/Screenshot%20from%202024-07.png)
 
 ## Tabla de contenidos
 
